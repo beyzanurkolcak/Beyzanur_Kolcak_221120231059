@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BENİMLE GEZ</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="anasayfa">
+        <a href="index.html"><h1>Ana Sayfa</h1></a>
+    </div>
+
+<div class="page-container">
+    <div class="gallery-container">
+        <img src="./resim/1.jpg" alt="Resim 1">
+        <img src="./resim/2.jpg" alt="Resim 2">
+        <img src="./resim/3.jpg" alt="Resim 3">
+        <img src="./resim/4.jpg" alt="Resim 4">
+        <img src="./resim/5.jpg" alt="Resim 5">
+        <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+        <button class="next" onclick="plusSlides(1)">&#10095;</button>
+    </div>
+</div>
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByTagName("img");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+    }
+</script>
+
+</body>
+</html>
